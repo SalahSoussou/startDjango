@@ -5,4 +5,4 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse('Hello World !!! <div> my div don</div> <p>still ok </p>')
+    return HttpResponse('Hello World from views!!! <div> my div don</div> <p>still ok </p>')
