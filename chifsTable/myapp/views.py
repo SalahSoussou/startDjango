@@ -21,3 +21,15 @@ def date(request):
 def menu(request):
     text = """<h1 style="color: #F4CE14;">  My Menu : </h1>"""
     return HttpResponse(text)
+
+
+#############################################
+
+def cups(request, cup):
+    mycups = {
+        'tea': 'ment tea no souger',
+        'coffe': 'milck coffe',
+        'jous': 'orenge jouse',
+    }
+    my_pik = mycups[cup]
+    return HttpResponse(f"<h2>{cup}</h2>" + my_pik)

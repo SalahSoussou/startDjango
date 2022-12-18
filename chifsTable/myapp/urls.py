@@ -7,4 +7,5 @@ urlpatterns = [
     path('hello/', views.sau_hello),
     path('date/', views.date),
     path('menu/', views.menu),
+    path('cups/<str:cup>', views.cups),
 ]
