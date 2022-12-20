@@ -3,11 +3,13 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse
 from datetime import datetime
-from .forms import DemoForm
+from myapp.forms import DemoForm
 
 
 def home(request):
-    return HttpResponse(' <div> my div don</div> <p>still ok </p>')
+    form = DemoForm()
+    context = {"form": form}
+    return render(request, 'home.html', context)
 
 
 def sau_hello(request):
