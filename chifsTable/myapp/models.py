@@ -14,3 +14,9 @@ class Menu(models.Model):
     count = models.IntegerField()
     catigory_id = models.ForeignKey(
         Catigoty, on_delete=models.PROTECT, default=None)
+
+
+class LogForm(models.Model):
+    name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
+    time_log = models.TimeField()

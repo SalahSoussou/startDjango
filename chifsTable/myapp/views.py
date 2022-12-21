@@ -3,17 +3,21 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse
 from datetime import datetime
-from myapp.forms import DemoForm
+from myapp.forms import Loger
 
 
 def home(request):
-    form = DemoForm()
+    form = Loger()
+    if request.method == 'POST':
+        form = Loger(request.POST)
+        if form.is_valid():
+            form.save()
     context = {"form": form}
     return render(request, 'home.html', context)
 
 
 def sau_hello(request):
-    return HttpResponse('Hello World from views!!! ')
+    return HttpResponse('Hello World t from views!!! ')
 
 
 def date(request):

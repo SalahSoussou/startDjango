@@ -1,15 +1,9 @@
 from django import forms
 
-
-SHifts = (
-    ("1", "Morning"),
-    ("2", "Afternoon"),
-    ("3", "Evening"),
-)
+from .models import LogForm
 
 
-class DemoForm(forms.Form):
-    name = forms.CharField(max_length=200)
-    last_name = forms.CharField(max_length=200)
-    shifts = forms.ChoiceField(choices=SHifts)
-    time_log = forms.TimeField()
+class Loger(forms.ModelForm):
+    class Meta:
+        model = LogForm
+        fields = '__all__'
