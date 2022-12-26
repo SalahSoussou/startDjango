@@ -22,7 +22,9 @@ def sau_hello(request):
 
 def date(request):
     year = datetime.today()
-    return render(request, 'date.html', {'year': year})
+    week = 'test'
+    mydate = {'year': year, 'week': week}
+    return render(request, 'date.html', mydate)
 
 
 def menu(request):
